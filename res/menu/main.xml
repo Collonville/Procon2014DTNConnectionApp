@@ -1,0 +1,8 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.procon2.MainActivity" >
+    <item android:id="@+id/updateTime" android:title="DTN更新時間" android:orderInCategory="101"></item>
+    <item android:id="@+id/deviceName" android:orderInCategory="102" android:title="端末名の指定"></item>
+
+</menu>
