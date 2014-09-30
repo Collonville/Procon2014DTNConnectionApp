@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/changeInsuranceCardNumberBtn"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/changeSexBtn"
+        android:layout_toLeftOf="@+id/name"
+        android:text="変更" />
+
+    <Button
+        android:id="@+id/changeSexBtn"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/changeNameBtn"
+        android:layout_toLeftOf="@+id/name"
+        android:height="5dp"
+        android:text="変更" />
+
+    <Button
+        android:id="@+id/changeInjuryBtn"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/changeInsuranceCardNumberBtn"
+        android:layout_toLeftOf="@+id/name"
+        android:height="5dp"
+        android:text="変更" />
+
+    <Button
+        android:id="@+id/takePictureButton"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/injuryView"
+        android:layout_alignBottom="@+id/injuryView"
+        android:layout_alignLeft="@+id/pitureView"
+        android:layout_alignParentRight="true"
+        android:height="5dp"
+        android:text="写真を撮る" />
+
+    <Button
+        android:id="@+id/changeNameBtn"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:height="5dp"
+        android:text="変更" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/changeSexBtn"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/changeNameBtn"
+        android:gravity="center"
+        android:text="氏名(カタカナ):"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/hokensyouBangou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/changeInsuranceCardNumberBtn"
+        android:layout_alignLeft="@+id/TextView01"
+        android:layout_alignRight="@+id/TextView01"
+        android:layout_below="@+id/TextView01"
+        android:gravity="center"
+        android:text="保険証番号:"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/ID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/changeInjuryBtn"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="固有ＩＤ:"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/injury"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ID"
+        android:layout_alignRight="@+id/hokensyouBangou"
+        android:layout_alignTop="@+id/changeInjuryBtn"
+        android:layout_toRightOf="@+id/changeInjuryBtn"
+        android:gravity="center"
+        android:text="怪我の有無:"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/changeSexBtn"
+        android:layout_alignLeft="@+id/name"
+        android:layout_alignRight="@+id/name"
+        android:layout_below="@+id/name"
+        android:gravity="center"
+        android:text="年齢/性別:"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/nameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/name"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/name"
+        android:gravity="center"
+        android:text="No Data"
+        android:textSize="20sp"
+        android:width="260dp" />
+
+    <TextView
+        android:id="@+id/sexView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/TextView01"
+        android:layout_alignLeft="@+id/nameView"
+        android:layout_below="@+id/nameView"
+        android:gravity="center"
+        android:text="No Data"
+        android:textSize="20sp"
+        android:width="260dp" />
+
+    <TextView
+        android:id="@+id/insuranceCardNumberView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/injury"
+        android:layout_alignLeft="@+id/sexView"
+        android:layout_alignTop="@+id/hokensyouBangou"
+        android:gravity="center"
+        android:text="No Data"
+        android:textSize="20sp"
+        android:width="260dp" />
+
+    <TextView
+        android:id="@+id/injuryView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ID"
+        android:layout_alignLeft="@+id/insuranceCardNumberView"
+        android:layout_alignTop="@+id/injury"
+        android:gravity="center"
+        android:text="No Data"
+        android:textSize="20sp"
+        android:width="260dp" />
+
+    <ImageView
+        android:id="@+id/pitureView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/injuryView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/nameView"
+        android:height="5dp" />
+
+</RelativeLayout>
