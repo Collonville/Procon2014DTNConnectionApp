@@ -23,7 +23,8 @@ public class DeviceInfo {
 	
 	private static int ipAdr;
 	
-	@SuppressLint("DefaultLocale") public DeviceInfo(Context context){
+	@SuppressLint("DefaultLocale") 
+	public DeviceInfo(Context context){
 		/** Wi-Fi通信に関する情報 **/
 		manager = (WifiManager)context.getSystemService(Context.WIFI_SERVICE);
 		info = manager.getConnectionInfo();

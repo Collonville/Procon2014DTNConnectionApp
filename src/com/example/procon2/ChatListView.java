@@ -1,17 +1,13 @@
 package com.example.procon2;
 
 public class ChatListView {
-	public String message;
 	public String deviceName;
-	public String deviceIP;
+	public String message;
 	public String time;  
-	public String hash;
 	  
-	public ChatListView(String message, String deviceName, String deviceIP,String time,String hash){
-		this.message    = message;
+	public ChatListView(final String deviceName, final String message, final String time) {
 		this.deviceName = deviceName;
-		this.deviceIP   = deviceIP;
+		this.message    = message;
 		this.time       = time;
-		this.hash       = hash;
 	}  
 }

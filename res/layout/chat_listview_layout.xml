@@ -4,54 +4,37 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-<TextView
-    android:id="@+id/deviceIP"
-    android:layout_width="135dp"
-    android:layout_height="wrap_content"
-    android:layout_alignParentLeft="true"
-    android:layout_below="@+id/message"
-    android:background="#606060"
-    android:textColor="#FFFFFF"
-    android:textSize="14sp"
-    android:gravity="center" />
 
-<TextView
-    android:id="@+id/message"
-    android:layout_height="20dp"
-    android:layout_width="match_parent"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentTop="true"
-    android:background="#FAFAD2"
-    android:textSize="16sp" />
+    <TextView
+        android:id="@+id/deviceName"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/message"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="5dip"
+        android:background="@drawable/textview_round1"
+        android:gravity="center"
+        android:height="20dp"/>
 
-<TextView
-    android:id="@+id/deviceName"
-    android:layout_width="150dp"
-    android:layout_height="wrap_content"
-    android:layout_alignBaseline="@+id/deviceIP"
-    android:layout_alignBottom="@+id/deviceIP"
-    android:layout_toRightOf="@+id/deviceIP"
-    android:textSize="14sp" 
-    android:gravity="center"/>
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/textview_round1"
+        android:gravity="center" 
+        android:height="20dp"
+        android:layout_marginTop="5dip"/>
 
-<TextView
-    android:id="@+id/temp"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignBaseline="@+id/deviceName"
-    android:layout_alignBottom="@+id/deviceName"
-    android:layout_toLeftOf="@+id/time"
-    android:layout_toRightOf="@+id/deviceName"
-    android:background="#AFEEEE" />
-
-<TextView
-    android:id="@+id/time"
-    android:layout_width="80dp"
-    android:layout_height="wrap_content"
-    android:layout_alignBaseline="@+id/temp"
-    android:layout_alignBottom="@+id/temp"
-    android:layout_alignParentRight="true"
-    android:background="#7FFFD4"
-    android:gravity="center"/>
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_alignLeft="@+id/deviceName"
+        android:layout_below="@+id/time"
+        android:background="#FAFAD2"
+        android:textSize="16sp" 
+        android:layout_marginRight="5dip"/>
 
 </RelativeLayout>

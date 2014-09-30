@@ -46,8 +46,8 @@ public class SensorActivity implements SensorEventListener {
   	
   	private static boolean isMoving = false;
   	
-  	public static boolean getIsMoving(){
-  		return isMoving;
+  	public static String getIsMoving(){
+  		return Boolean.toString(isMoving);
   	}
     
     
@@ -121,6 +121,5 @@ public class SensorActivity implements SensorEventListener {
 			old_y = currentAccelerationValues[1];
 			old_z = currentAccelerationValues[2];
 		}
- 
 	}
 }

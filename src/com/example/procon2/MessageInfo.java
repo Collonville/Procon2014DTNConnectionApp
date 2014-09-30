@@ -11,7 +11,7 @@ import org.msgpack.annotation.MessagePackMessage;
 /********************************************************************/
 @MessagePackMessage
 public class MessageInfo{
-	public int id;                       
+	public String[] id;                       
 	public String[] deviceName;  
 	public String[] deviceIP;    
 	public String[] chatMessage; 
@@ -19,14 +19,14 @@ public class MessageInfo{
 	public String[] hash;      
 	public String[] latitude;  
 	public String[] longitude;
-	public boolean  isMoving;
+	public String[] isMoving;
 	
 	public MessageInfo(){
 
 	}
 	
-	public MessageInfo(int id,List<String> deviceName,List<String> deviceIP,List<String> chatMessage,List<String> time,List<String> hash,List<String> latitude,List<String> longitude, boolean isMoving){
-		this.id = id;
+	public MessageInfo(List<String> id,List<String> deviceName,List<String> deviceIP,List<String> chatMessage,List<String> time,List<String> hash,List<String> latitude,List<String> longitude, List<String> isMoving){
+		this.id          = (String[])id.toArray(new String[0]);
 		this.deviceName  = (String[])deviceName.toArray(new String[0]);
 		this.deviceIP    = (String[])deviceIP.toArray(new String[0]);
 		this.chatMessage = (String[])chatMessage.toArray(new String[0]);
@@ -34,6 +34,6 @@ public class MessageInfo{
 		this.hash        = (String[])hash.toArray(new String[0]);
 		this.latitude    = (String[])latitude.toArray(new String[0]);
 		this.longitude   = (String[])longitude.toArray(new String[0]);
-		this.isMoving    = isMoving;
+		this.isMoving    = (String[])isMoving.toArray(new String[0]);
 	}
 }

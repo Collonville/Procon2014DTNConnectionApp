@@ -14,16 +14,28 @@ public class ShelterMapActivity extends Fragment implements OnClickListener{
 	
 	public ShelterMapActivity(Context context){
 		this.context = context;
+		
+		
 	}
 	
 	@Override
-    public View onCreateView( LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.shelter_layout, container, false);
-
-   
+        
+        
+        
 
         return v;
     }
+	
+	
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		
+		
+	}
 
 	@Override
 	public void onClick(View v) {

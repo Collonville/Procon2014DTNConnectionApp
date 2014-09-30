@@ -11,6 +11,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.*;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TabHost;
 import android.widget.TabHost.TabContentFactory;
@@ -25,7 +26,8 @@ public class MainActivity extends FragmentActivity implements android.widget.Tab
     private WifiManager mWifiManager;
     private WifiManagerNew mWifiManagerNew;
     
-    DeviceInfo deviceInfo;
+    @SuppressWarnings("unused")
+	private DeviceInfo deviceInfo;
     
     private Send send;
     private Recive recive;
@@ -39,6 +41,7 @@ public class MainActivity extends FragmentActivity implements android.widget.Tab
     protected void onCreate(Bundle bundle){
         super.onCreate(bundle);
         setContentView(R.layout.activity_main);
+
         
         mWifiManager = (WifiManager) getSystemService(WIFI_SERVICE);
 
@@ -80,22 +83,34 @@ public class MainActivity extends FragmentActivity implements android.widget.Tab
         mTabHost.setup();
         
         android.widget.TabHost.TabSpec chatTabspec = mTabHost.newTabSpec("chatTab");
-        chatTabspec.setIndicator("Chat");
+        chatTabspec.setIndicator("É`ÉÉÉbÉg");
         chatTabspec.setContent(new DummyTabFactory(this));
         mTabHost.addTab(chatTabspec);
         mTabHost.setOnTabChangedListener(this);
         onTabChanged("chatTab"); //èâä˙É^Éuê›íË
         
-        android.widget.TabHost.TabSpec connetedDeviceTabsec = mTabHost.newTabSpec("decviceConnectionTab");
-        connetedDeviceTabsec.setIndicator("Conected");
-        connetedDeviceTabsec.setContent(new DummyTabFactory(this));
-        mTabHost.addTab(connetedDeviceTabsec);
-        mTabHost.setOnTabChangedListener(this);
-        
         android.widget.TabHost.TabSpec mapTabsec = mTabHost.newTabSpec("mapTab");
-        mapTabsec.setIndicator("Map");
+        mapTabsec.setIndicator("îìÔèäàƒì‡");
         mapTabsec.setContent(new DummyTabFactory(this));
         mTabHost.addTab(mapTabsec);
+        mTabHost.setOnTabChangedListener(this);
+        
+        android.widget.TabHost.TabSpec emergencyTabsec = mTabHost.newTabSpec("emergencyTab");
+        emergencyTabsec.setIndicator("âûã}èàíu");
+        emergencyTabsec.setContent(new DummyTabFactory(this));
+        mTabHost.addTab(emergencyTabsec);
+        mTabHost.setOnTabChangedListener(this);
+        
+        android.widget.TabHost.TabSpec personalÇhnformationTabsec = mTabHost.newTabSpec("personalÇhnformationTab");
+        personalÇhnformationTabsec.setIndicator("å¬êlèÓïÒ");
+        personalÇhnformationTabsec.setContent(new DummyTabFactory(this));
+        mTabHost.addTab(personalÇhnformationTabsec);
+        mTabHost.setOnTabChangedListener(this);
+        
+        android.widget.TabHost.TabSpec connetedDeviceTabsec = mTabHost.newTabSpec("decviceConnectionTab");
+        connetedDeviceTabsec.setIndicator("í êMâ¬î\ÉfÉoÉCÉX");
+        connetedDeviceTabsec.setContent(new DummyTabFactory(this));
+        mTabHost.addTab(connetedDeviceTabsec);
         mTabHost.setOnTabChangedListener(this);
         /* End */
         
@@ -167,7 +182,7 @@ public class MainActivity extends FragmentActivity implements android.widget.Tab
         Log.d("AdhocDemo", s);
     }
     
-    private String createIPAddress(){
+    private String createIPAddress() {
     	Random random = new Random();
     	String u = Integer.toString(192);
     	String t = Integer.toString(random.nextInt(254) + 1);
@@ -240,18 +255,29 @@ public class MainActivity extends FragmentActivity implements android.widget.Tab
     	
     }
     
-    public void onTabChanged(String s)
-    {
+    public void onTabChanged(String s) {
         Log.d("TAB_FRAGMENT_LOG", (new StringBuilder("tabId:")).append(s).toString());
-        if(mLastTabId != s)
-        {
+        if(mLastTabId != s) {
             FragmentTransaction fragmenttransaction = getSupportFragmentManager().beginTransaction();
-            if("chatTab" == s)
+            
+            InputMethodManager mgr = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        	mgr.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+            
+            if("chatTab" == s) {	
                 fragmenttransaction.replace(R.id.realtabcontent, new ChatActivity(this));
-            else if("decviceConnectionTab" == s)
+            }
+            else if("decviceConnectionTab" == s) {
             	fragmenttransaction.replace(R.id.realtabcontent, new ConnectedDeviceActivity(this));
-            else if("mapTab" == s)
+            }
+            else if("mapTab" == s) {
             	fragmenttransaction.replace(R.id.realtabcontent, new ShelterMapActivity(this));
+            }
+            else if("personalÇhnformationTab" == s) {
+            	fragmenttransaction.replace(R.id.realtabcontent, new PersonalInformation(this));
+            }
+            else if("emergencyTab" == s) {
+            	fragmenttransaction.replace(R.id.realtabcontent, new EmergencyMeasureActivity(this));
+            }
             	
             mLastTabId = s;
             fragmenttransaction.commit();

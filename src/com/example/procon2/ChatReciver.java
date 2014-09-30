@@ -19,6 +19,7 @@ public class ChatReciver {
 	private String hash;   
 	private String latitude;
 	private String longitude;
+	private String isMoving;
 	
 	private MessageInfo messageInfo;
 	private static boolean readConstactor = true;
@@ -50,23 +51,23 @@ public class ChatReciver {
     	        		
     	        		messageInfo = (MessageInfo)msgpack.read(buf,MessageInfo.class);
     	        		
-    	        		deviceName = messageInfo.deviceName[0];
-    	        		deviceIP = messageInfo.deviceIP[0];
-    	        		chatMessage = messageInfo.chatMessage[0];
-    	        		time = messageInfo.time[0];
-    	        		hash = messageInfo.hash[0];
-    	        		latitude = messageInfo.latitude[0];
-    	        		longitude = messageInfo.longitude[0];
+    	        		deviceName   = messageInfo.deviceName[0];
+    	        		deviceIP     = messageInfo.deviceIP[0];
+    	        		chatMessage  = messageInfo.chatMessage[0];
+    	        		time         = messageInfo.time[0];
+    	        		hash         = messageInfo.hash[0];
+    	        		latitude     = messageInfo.latitude[0];
+    	        		longitude    = messageInfo.longitude[0];
+    	        		isMoving     = messageInfo.isMoving[0];
     	        		
-    	            }catch(Exception e){
-    	            	
+    	            } catch(Exception e) {
     	            }
             	
 	                handler.post(new Runnable() {
 		                @Override
 		                public void run(){
-		                	ChatActivity.pushChatMessage(chatMessage, deviceName, deviceIP, hash, time);
-		                	DTNMessageCollection.addData(deviceName, deviceIP, chatMessage, time, hash, latitude, longitude);
+		                	ChatActivity.pushChatMessage(deviceName, chatMessage, time);
+		                	DTNMessageCollection.addData(deviceName, deviceIP, chatMessage, time, hash, latitude, longitude, isMoving);
 		                }
 	                });
             	}

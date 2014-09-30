@@ -11,7 +11,6 @@ import java.util.TimerTask;
 
 import org.msgpack.MessagePack;
 import android.os.Handler;
-import android.util.Log;
 
 public class Send{
 	private static DatagramSocket sendSocket;
@@ -31,31 +30,35 @@ public class Send{
 		}
 	}
 	
-	public void startDTNConnection(){
+	public void startDTNConnection() {
 		final Handler dtnHandler = new Handler();
 	    timer.schedule(new TimerTask() {
 	        @Override
 	        public void run() {
 	          // TODO Auto-generated method stub
-	        	dtnHandler.post( new Runnable(){
+	        	dtnHandler.post( new Runnable() {
 	            public void run(){
 	            	new Thread(new Runnable() {
 	            		public void run() {          
+	            			List<String> id  = new ArrayList<String>();
 	            			List<String> deviceName  = new ArrayList<String>();
 	            			List<String> deviceIP    = new ArrayList<String>();
 	            			List<String> dummy       = new ArrayList<String>();
 	            			List<String> latitude    = new ArrayList<String>();
 	            			List<String> longitude   = new ArrayList<String>();
+	            			List<String> isMoving    = new ArrayList<String>();
 	            			
+	            			id.add("0");
 	            			deviceName.add(DeviceInfo.getDeviceName());
 	            			deviceIP.add(DeviceInfo.getDeviceIP());
 	            			
 	            			latitude.add(GpsActivity.getLatitude());
 	            			longitude.add(GpsActivity.getLongitude());
+	            			isMoving.add(SensorActivity.getIsMoving());
 	            			
 	            			dummy.add("");
 	            			
-	            			MessageInfo messageInfo = new MessageInfo(0, deviceName, deviceIP, dummy, dummy, DTNMessageCollection.getHash(), latitude, longitude ,SensorActivity.getIsMoving());
+	            			MessageInfo messageInfo = new MessageInfo(id, deviceName, deviceIP, dummy, dummy, DTNMessageCollection.getHash(), latitude, longitude , isMoving);
 	            			
 	            			sendByUDP(messageInfo);
 	            		}

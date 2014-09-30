@@ -15,7 +15,15 @@
     <ListView
         android:id="@+id/connectedListView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="706dp" >
     </ListView>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="プロコン課題部門富山　Android DTN Connection Ver0.5.1"
+        android:textSize="22sp" 
+        android:gravity="center"/>
 
 </LinearLayout>

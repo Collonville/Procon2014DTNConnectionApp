@@ -111,6 +111,7 @@ public class ChatActivity extends Fragment implements OnClickListener {
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		if(v == sendBt){
+			List<String> id          = new ArrayList<String>();
 			List<String> deviceName  = new ArrayList<String>();
 			List<String> deviceIP    = new ArrayList<String>();
 			List<String> chatMessage = new ArrayList<String>();
@@ -118,12 +119,15 @@ public class ChatActivity extends Fragment implements OnClickListener {
 			List<String> hash        = new ArrayList<String>();
 			List<String> latitude    = new ArrayList<String>();
 			List<String> longitude   = new ArrayList<String>();
+			List<String> isMoving    = new ArrayList<String>();
 			
+			id.add("4");
 			deviceName.add(DeviceInfo.getDeviceName());
 			deviceIP.add(DeviceInfo.getDeviceIP());
 			
 			latitude.add(GpsActivity.getLatitude());
 			longitude.add(GpsActivity.getLongitude());
+			isMoving.add(SensorActivity.getIsMoving());
 			
 			if(((EditText)chatMessageInput).getText().toString().equals(""))
 				chatMessage.add("None Message");
@@ -134,7 +138,8 @@ public class ChatActivity extends Fragment implements OnClickListener {
 			hash.add(getHash(deviceName.get(0) + deviceIP.get(0) + chatMessage.get(0) + time.get(0)));
 
 			cal = Calendar.getInstance();
-			MessageInfo messageInfo = new MessageInfo(4,deviceName,deviceIP,chatMessage,time,hash,latitude,longitude,SensorActivity.getIsMoving());
+			MessageInfo messageInfo = new MessageInfo(id, deviceName, deviceIP, chatMessage, time, hash,
+					latitude, longitude, isMoving);
 			
 			/**�A���[�g�_�C�A���O�̕\��**/
 			sendBt.setClickable(false);
@@ -151,8 +156,8 @@ public class ChatActivity extends Fragment implements OnClickListener {
 		}
 	}
 	
-	public static void pushChatMessage(String chatMessage,String deviceName,String ip,String time,String hash){
-		dataList.add(0 ,new ChatListView(chatMessage, deviceName, ip, time ,hash));
+	public static void pushChatMessage(final String deviceName, final String chatMessage, final String time){
+		dataList.add(0 ,new ChatListView(deviceName, chatMessage, time));
 	    adapter.notifyDataSetChanged();
 	}
 
@@ -174,10 +179,8 @@ public class ChatActivity extends Fragment implements OnClickListener {
 
 	      @SuppressLint("InflateParams") @Override
 	      public View getView(int position,View convertView,ViewGroup parent) {
-	    	  TextView message;
 	    	  TextView deviceName;
-	    	  TextView deviceIP;
-	    	  TextView hash;
+	    	  TextView message;
 	    	  TextView time;
 	    	  
 	    	  View v = convertView;
@@ -188,16 +191,12 @@ public class ChatActivity extends Fragment implements OnClickListener {
 		      }
 		      ChatListView chatListView = (ChatListView)getItem(position);
 		      if(chatListView != null){
-		    	  message        = (TextView) v.findViewById(R.id.message);
 		    	  deviceName     = (TextView) v.findViewById(R.id.deviceName);
-		    	  deviceIP       = (TextView) v.findViewById(R.id.deviceIP);
-		    	  hash           = (TextView) v.findViewById(R.id.temp);
+		    	  message        = (TextView) v.findViewById(R.id.message);
 		    	  time           = (TextView) v.findViewById(R.id.time);
 		        
-		    	  message.setText(chatListView.message);
 		    	  deviceName.setText(chatListView.deviceName);
-		    	  deviceIP.setText(chatListView.deviceIP);
-		    	  hash.setText(chatListView.hash);
+		    	  message.setText(chatListView.message);
 		    	  time.setText(chatListView.time);
 		      }
 		      return v;
