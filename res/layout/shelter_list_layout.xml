@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/shelterName"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="5dip"
+        android:layout_toLeftOf="@+id/finalDestinationBtn"
+        android:gravity="center"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/shelterAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/shelterName"
+        android:layout_below="@+id/shelterName"
+        android:layout_toLeftOf="@+id/finalDestinationBtn"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/finalDestinationBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/shelterAddress"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center_horizontal"
+        android:text="目的地に\n設定" />
+
+</RelativeLayout>

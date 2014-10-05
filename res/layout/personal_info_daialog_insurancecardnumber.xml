@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/insuranceCarNumberView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:text="保険証番号(Insurance Card Number)"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/insuranceCarNumberInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/insuranceCarNumberView"
+        android:ems="10"
+        android:maxLength="8"
+        android:inputType="number" >
+
+        <requestFocus />
+    </EditText>
+
+</RelativeLayout>
