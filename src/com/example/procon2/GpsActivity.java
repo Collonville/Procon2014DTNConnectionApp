@@ -10,113 +10,118 @@ import android.util.Log;
 
 public class GpsActivity {
 	private static final String TAG = "LocationSampleActivity";
-    private LocationManager mLocationManager;
-    private LocationProvider mProvider;
-    private boolean mLocationEnabled;
-    
-    private static double latitude;
-    private static double longitude;
+	private LocationManager mLocationManager;
+	private LocationProvider mProvider;
+	private boolean mLocationEnabled;
 
-    public GpsActivity(Context contect) {
-        // LocationManagerのオブジェクト取得
-        mLocationManager = (LocationManager) contect.getSystemService(Context.LOCATION_SERVICE);
-        mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 
-                100, // 時間指定：10秒間隔
-                0,  // 距離指定：10m間隔
-                mListener);
-        // GPS_PROVIDERの取得
-        mProvider = mLocationManager.getProvider(LocationManager.GPS_PROVIDER);
-        Log.e(TAG,mProvider.toString());
-        
-        mLocationEnabled = mLocationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+	private static double latitude;
+	private static double longitude;
+	private static boolean gpsOn = true;
 
-        if (!mLocationEnabled) {
-        	Log.d("GPS","GPS is off");
-        }
-        
-        latitude  = 0.0;
-        longitude = 0.0;
-    }
-    
-    public static String getLatitude(){
-    	return Double.toString(latitude);
-    }
-    
-    public static String getLongitude(){
-    	return Double.toString(longitude);
-    }
+	public GpsActivity(Context contect) {
+		// LocationManagerのオブジェクト取得
+		mLocationManager = (LocationManager) contect.getSystemService(Context.LOCATION_SERVICE);
+		mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,
+				100, // 時間指定：10秒間隔
+				0, // 距離指定：10m間隔
+				mListener);
+		// GPS_PROVIDERの取得
+		mProvider = mLocationManager.getProvider(LocationManager.GPS_PROVIDER);
+		Log.e(TAG, mProvider.toString());
 
-//    @Override
-//    protected void onStop() {
-//        super.onStop();
-//        if (mLocationEnabled) {
-//            // 通知が不要になったタイミングで、必ずリスナーを解除する
-//            mLocationManager.removeUpdates(mListener);
-//        }
-//    }
+		mLocationEnabled = mLocationManager
+				.isProviderEnabled(LocationManager.GPS_PROVIDER);
 
-    /**
-     * ロケーションマネージャにセットするリスナー
-     */
-    private final LocationListener mListener = new LocationListener() {
-        public void onLocationChanged(Location location) {
-            // 位置情報が変更された
-            setLocationData(location);
-        }
+		if (!mLocationEnabled) {
+			Log.d("GPS", "GPS is off");
+			gpsOn = false;
+		}
 
-        public void onProviderDisabled(String provider) {
-            // ユーザーによってProviderが無効になった
-        }
+		latitude = 0.0;
+		longitude = 0.0;
+	}
 
-        public void onProviderEnabled(String provider) {
-            // ユーザーによってProviderが有効になった
-        }
+	public static double getLatitude() {
+		return latitude;
+	}
 
-        public void onStatusChanged(String provider, int status, Bundle extras) {
-            // Providerの状態が変わった
-        }
+	public static double getLongitude() {
+		return longitude;
+	}
 
-    };
+	public static boolean getGpsOn() {
+		return gpsOn;
+	}
 
-    /**
-     * センサーマネージャから通知される値をUI表示
-     */
-    private void setLocationData(Location location) {    
-        //Log.d("provider_name",location.getProvider());
-        Log.d("latitude",Double.toString(location.getLatitude()));
-        Log.d("longitude",Double.toString(location.getLongitude()));
-        
-        latitude = location.getLatitude();
-        longitude = location.getLongitude();
+	/*
+	 * ロケーションマネージャにセットするリスナー
+	 */
+	private final LocationListener mListener = new LocationListener() {
+		public void onLocationChanged(Location location) {
+			// 位置情報が変更された
+			setLocationData(location);
+		}
 
-        if (location.hasAltitude()) {
-        	//Log.d("longitude",Double.toString(location.getAltitude()));
-            //((TextView) findViewById(R.id.altitude)).setText("" + location.getAltitude());
-        } else {
-        	Log.d("longitude","disable");
-            //((TextView) findViewById(R.id.altitude)).setText("disable");
-        }
+		public void onProviderDisabled(String provider) {
+			gpsOn = false;
+			// ユーザーによってProviderが無効になった
+		}
 
-//        if (location.hasAccuracy()) {
-//            ((TextView) findViewById(R.id.accuracy)).setText("" + location.getAccuracy());
-//        } else {
-//            ((TextView) findViewById(R.id.accuracy)).setText("disable");
-//        }
-//        ((TextView) findViewById(R.id.time)).setText("" + location.getTime());
+		public void onProviderEnabled(String provider) {
+			gpsOn = true;
+			// ユーザーによってProviderが有効になった
+		}
 
-//        if (location.hasBearing()) {
-//            ((TextView) findViewById(R.id.bearing)).setText("" + location.getBearing());
-//
-//        } else {
-//            ((TextView) findViewById(R.id.bearing)).setText("disable");
-//        }
-//        if (location.hasSpeed()) {
-//            ((TextView) findViewById(R.id.speed)).setText("" + location.getSpeed());
-//
-//        } else {
-//            ((TextView) findViewById(R.id.speed)).setText("disable");
-//        }
+		public void onStatusChanged(String provider, int status, Bundle extras) {
+			// Providerの状態が変わった
+		}
 
-    }
+	};
+
+	/**
+	 * センサーマネージャから通知される値をUI表示
+	 */
+	private void setLocationData(Location location) {
+		// Log.d("provider_name",location.getProvider());
+		// Log.d("latitude",Double.toString(location.getLatitude()));
+		// Log.d("longitude",Double.toString(location.getLongitude()));
+
+		latitude = location.getLatitude();
+		longitude = location.getLongitude();
+
+		if (location.hasAltitude()) {
+			// Log.d("longitude",Double.toString(location.getAltitude()));
+			// ((TextView) findViewById(R.id.altitude)).setText("" +
+			// location.getAltitude());
+		} else {
+			Log.d("longitude", "disable");
+			// ((TextView) findViewById(R.id.altitude)).setText("disable");
+		}
+
+		// if (location.hasAccuracy()) {
+		// ((TextView) findViewById(R.id.accuracy)).setText("" +
+		// location.getAccuracy());
+		// } else {
+		// ((TextView) findViewById(R.id.accuracy)).setText("disable");
+		// }
+		// ((TextView) findViewById(R.id.time)).setText("" +
+		// location.getTime());
+
+		// if (location.hasBearing()) {
+		// ((TextView) findViewById(R.id.bearing)).setText("" +
+		// location.getBearing());
+		//
+		// } else {
+		// ((TextView) findViewById(R.id.bearing)).setText("disable");
+		// }
+		// if (location.hasSpeed()) {
+		// ((TextView) findViewById(R.id.speed)).setText("" +
+		// location.getSpeed());
+		//
+		// } else {
+		// ((TextView) findViewById(R.id.speed)).setText("disable");
+		// }
+
+	}
 
 }

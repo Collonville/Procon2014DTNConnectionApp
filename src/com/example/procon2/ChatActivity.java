@@ -125,8 +125,8 @@ public class ChatActivity extends Fragment implements OnClickListener {
 			deviceName.add(DeviceInfo.getDeviceName());
 			deviceIP.add(DeviceInfo.getDeviceIP());
 			
-			latitude.add(GpsActivity.getLatitude());
-			longitude.add(GpsActivity.getLongitude());
+			latitude.add(Double.toString(GpsActivity.getLatitude()));
+			longitude.add(Double.toString(GpsActivity.getLongitude()));
 			isMoving.add(SensorActivity.getIsMoving());
 			
 			if(((EditText)chatMessageInput).getText().toString().equals(""))
@@ -138,8 +138,7 @@ public class ChatActivity extends Fragment implements OnClickListener {
 			hash.add(getHash(deviceName.get(0) + deviceIP.get(0) + chatMessage.get(0) + time.get(0)));
 
 			cal = Calendar.getInstance();
-			MessageInfo messageInfo = new MessageInfo(id, deviceName, deviceIP, chatMessage, time, hash,
-					latitude, longitude, isMoving);
+			MessageInfo messageInfo = new MessageInfo(id, deviceName, deviceIP, chatMessage, time, hash, latitude, longitude, isMoving);
 			
 			/**�A���[�g�_�C�A���O�̕\��**/
 			sendBt.setClickable(false);

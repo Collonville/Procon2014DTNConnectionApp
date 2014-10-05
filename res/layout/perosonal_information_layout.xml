@@ -75,25 +75,14 @@
         android:layout_alignRight="@+id/TextView01"
         android:layout_below="@+id/TextView01"
         android:gravity="center"
-        android:text="保険証番号:"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/ID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/changeInjuryBtn"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="固有ＩＤ:"
-        android:textSize="20sp" />
+        android:text="保険証番号/血液型:"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/injury"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/ID"
+        android:layout_alignBottom="@+id/changeInjuryBtn"
         android:layout_alignRight="@+id/hokensyouBangou"
         android:layout_alignTop="@+id/changeInjuryBtn"
         android:layout_toRightOf="@+id/changeInjuryBtn"
@@ -122,7 +111,7 @@
         android:layout_toRightOf="@+id/name"
         android:gravity="center"
         android:text="No Data"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:width="260dp" />
 
     <TextView
@@ -153,12 +142,12 @@
         android:id="@+id/injuryView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/ID"
+        android:layout_alignBottom="@+id/injury"
         android:layout_alignLeft="@+id/insuranceCardNumberView"
         android:layout_alignTop="@+id/injury"
         android:gravity="center"
         android:text="No Data"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:width="260dp" />
 
     <ImageView

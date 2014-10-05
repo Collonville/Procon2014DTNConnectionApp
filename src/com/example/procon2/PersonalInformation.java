@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
@@ -84,7 +85,25 @@ public class PersonalInformation extends Fragment implements OnClickListener {
         insuranceCardNumberTextView = (TextView) v.findViewById(R.id.insuranceCardNumberView);
         injuryVTextiew = (TextView) v.findViewById(R.id.injuryView);
         
-
+        nameTextView.setText(PersonInfo.getName() + "(" + PersonInfo.getNameKana() + ")");
+        sexTextView.setText(PersonInfo.getAge() + "/" + PersonInfo.getSex());
+        insuranceCardNumberTextView.setText(PersonInfo.getInsuranceCardNumber());
+        
+        switch(PersonInfo.getInjuryId()) {
+        case -1:
+        	injuryVTextiew.setText("No Data");
+        	break;
+        case 0:
+        case 1:
+        	injuryVTextiew.setBackgroundColor(Color.GREEN);
+        	injuryVTextiew.setText(PersonInfo.getInjury());
+        	break;
+        case 2:
+        	injuryVTextiew.setBackgroundColor(Color.YELLOW);
+        	injuryVTextiew.setText(PersonInfo.getInjury());
+        	break;
+        }
+        
         
         /** èâä˙âÊëúÇÃì«Ç›çûÇ›Å@**/
         picture = v.findViewById(R.id.pitureView);
@@ -156,26 +175,68 @@ public class PersonalInformation extends Fragment implements OnClickListener {
 			
 			final EditText ageInput = (EditText)view.findViewById(R.id.ageInput);
 			final String items[] = new String[] {"íjê´(Male)", "èóê´(Female)"};
+			
 			new AlertDialog.Builder(context)
 	        .setView(view)
 	        .setSingleChoiceItems(items, 0,new DialogInterface.OnClickListener() {
 	            @Override
 	            public void onClick(DialogInterface dialog, int which) {
 	            	PersonInfo.setSex(items[which]);
-	            	
-	              
 	            }
 	        })
 	        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
 	            public void onClick(DialogInterface dialog, int whichButton) {
 	            	PersonInfo.setAge(ageInput.getText().toString());
 	            	sexTextView.setText(PersonInfo.getAge() + "/" + PersonInfo.getSex());
+
 	            }
 	        }).show();
-			
 		} else if(v == insuranceCardNumberBtn) {
+			LayoutInflater inflater = LayoutInflater.from(context);
+			View view = inflater.inflate(R.layout.personal_info_daialog_insurancecardnumber, null);
 			
+			final EditText insuranceCardNumberInput = (EditText)view.findViewById(R.id.insuranceCarNumberInput);
+			
+			new AlertDialog.Builder(context)
+		        .setView(view)
+		        .setSingleChoiceItems(PersonInfo.bloodTypeItems, 0, new DialogInterface.OnClickListener() {
+		            @Override
+		            public void onClick(DialogInterface dialog, int which) {
+		            	PersonInfo.setBloodTypeId(which);
+		            }
+		        })
+		        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+		            public void onClick(DialogInterface dialog, int whichButton) {
+		                PersonInfo.setInsuranceCardNumber(insuranceCardNumberInput.getText().toString());
+		            
+		      
+		                insuranceCardNumberTextView.setText(insuranceCardNumberInput.getText().toString() + "/" +PersonInfo.getBloodType());
+		            }
+		        }).show();
 		} else if(v == injuryBtn) {
+			new AlertDialog.Builder(context)
+	        .setSingleChoiceItems(PersonInfo.injuryItemns, 0, new DialogInterface.OnClickListener() {
+	            @Override
+	            public void onClick(DialogInterface dialog, int which) {
+	            	PersonInfo.setInjury(which);
+	            }
+	        })
+	        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+	            public void onClick(DialogInterface dialog, int whichButton) {
+	            	injuryVTextiew.setText(PersonInfo.getInjury());
+	            	
+	            	switch(PersonInfo.getInjuryId()) {
+	                case 0:
+	                case 1:
+	                	injuryVTextiew.setBackgroundColor(Color.GREEN);
+	                	break;
+	                case 2:
+	                	injuryVTextiew.setBackgroundColor(Color.YELLOW);
+	                	break;
+	                }
+
+	            }
+	        }).show();
 			
 		} 
 	}

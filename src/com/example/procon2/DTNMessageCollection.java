@@ -64,42 +64,6 @@ public class DTNMessageCollection {
 		return returnlist;
 	}
 	
-//	public synchronized static List<String> getDeviceNameListfromHash(List<String> input){
-//		List<String> returnlist = new ArrayList<String>();
-//		
-//		for(int i = 0; i < input.size(); i++){
-//			int index = DTNMessageCollection.hash.indexOf(input.get(i));	
-//			if(index != -1)
-//				returnlist.add(DTNMessageCollection.deviceName.get(index));
-//		}
-//		return returnlist;
-//	}
-//	
-//	public synchronized static List<String> getchatMessageListfromHash(List<String> input){
-//		List<String> returnlist = new ArrayList<String>();
-//		
-//		for(int i = 0; i < input.size(); i++){
-//			int index = DTNMessageCollection.hash.indexOf(input.get(i));
-//			//Log.d("Index",Integer.toString(index));
-//			//Log.d("IndexChatMessage",DTNMessageCollection.chatMessage.get(index));
-//			if(index != -1)
-//				returnlist.add(DTNMessageCollection.chatMessage.get(index));
-//		}
-//		return returnlist;
-//	}
-//	
-//	public synchronized static List<String> getIPListfromHash(List<String> input){
-//		List<String> returnlist = new ArrayList<String>();
-//		
-//		for(int i = 0; i < input.size(); i++){
-//			int index = DTNMessageCollection.hash.indexOf(input.get(i));
-//			if(index != -1)
-//				returnlist.add(DTNMessageCollection.deviceIP.get(index));
-//		}
-//		return returnlist;
-//	}
-	
-	
 	public static List<String> getDeviceName() {
 		return deviceName;
 	}

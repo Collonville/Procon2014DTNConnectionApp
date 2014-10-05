@@ -1,13 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <Spinner
+        android:id="@+id/prefectureSpinner"
+        android:layout_width="548dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/citiestTextView"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/citiestTextView"
+        android:layout_toRightOf="@+id/prefectureTextView" />
+
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/citiestTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/prefectureTextView"
+        android:layout_alignBottom="@+id/prefectureTextView"
+        android:layout_centerHorizontal="true"
+        android:text="市町村:"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:layout_marginTop="5dip" />
+
+    <Spinner
+        android:id="@+id/citiesSpinner"
+        android:layout_width="548dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/citiestTextView"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/citiestTextView" />
+
+    <TextView
+        android:id="@+id/prefectureTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:text="県名:"
+        android:textSize="20sp" 
+        android:layout_marginTop="5dip"/>
+
+    <ImageView
+        android:id="@+id/compasImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/prefectureSpinner"
+        android:scaleType="centerCrop"
+        android:src="@android:drawable/bottom_bar" />
+
+    <ListView
+        android:id="@+id/shelterList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ShelterInfo" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/compasImageView" >
 
-</LinearLayout>
+    </ListView>
+
+    <ImageView
+        android:id="@+id/arraowImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/shelterList"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/compasImageView"
+        android:src="@drawable/abc_ab_bottom_solid_dark_holo"
+        android:background="@null"  />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/compasImageView"
+        android:text="緯度:"
+        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/latitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignTop="@+id/compasImageView"
+        android:layout_toRightOf="@+id/textView1"
+        android:text=""
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/longitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/TextView01"
+        android:layout_alignRight="@+id/toShelterLenth"
+        android:layout_below="@+id/latitude"
+        android:layout_toRightOf="@+id/TextView01"
+        android:text=""
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/toShelterLenthTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextView01"
+        android:layout_toLeftOf="@+id/longitude"
+        android:text="距離:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:text="経度:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/toShelterLenth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/toShelterLenthTextView"
+        android:layout_alignBottom="@+id/toShelterLenthTextView"
+        android:layout_alignLeft="@+id/latitude"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FFFFFF"  />
+
+</RelativeLayout>

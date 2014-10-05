@@ -58,7 +58,7 @@ public class Recive {
 		                @Override
 		                public void run() {
 		                	//マルチブロードキャストで送るため、自分自身に送信するのと他の端末から来るため2回入るのを防ぐ
-		                	if(!DeviceInfo.getDeviceIP().equals(Arrays.asList(messageInfo.deviceIP).get(0))) {
+		                	if(!DeviceInfo.getDeviceIP().equals(Arrays.asList(messageInfo.deviceIP).get(0)) && DeviceInfo.isDtnRecive()) {
 			                	switch(id) {
 			                		case "0": {
 			                			List<String> id          = new ArrayList<String>();
@@ -132,8 +132,8 @@ public class Recive {
 					                				_chatMessage.add(0, "Debug:id=1 Message send to another devise");
 					                				_time.add(0, "Debug:id=1 time");
 					                				_hash.add(0, "Debug:id=1 hash ");
-					                				_latitude.add(0, GpsActivity.getLatitude());
-				                					_longitude.add(0, GpsActivity.getLongitude());
+					                				_latitude.add(0, Double.toString(GpsActivity.getLatitude()));
+				                					_longitude.add(0, Double.toString(GpsActivity.getLongitude()));
 				                					_isMoving.add(0, SensorActivity.getIsMoving());
 					                				/** End **/
 
@@ -161,8 +161,8 @@ public class Recive {
 				                				chatMessage.add(0, "Debug:id=1 Message send to another devise");
 				                				time.add(0, "Debug:id=1 time");
 				                				hash.add(0, "Debug:id=1 hash ");
-			                					latitude.add(0, GpsActivity.getLatitude());
-			                					longitude.add(0, GpsActivity.getLongitude());
+			                					latitude.add(0, Double.toString(GpsActivity.getLatitude()));
+			                					longitude.add(0, Double.toString(GpsActivity.getLongitude()));
 			                					isMoving.add(0, SensorActivity.getIsMoving());
 				                				/** End **/
 
@@ -212,6 +212,7 @@ public class Recive {
 			                				/** End **/
 			                			}
 			                		}
+
 			                		break;	
 			                	}
 			                }

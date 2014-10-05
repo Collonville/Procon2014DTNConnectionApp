@@ -1,7 +1,5 @@
 package com.example.procon2;
 
-import java.util.List;
-
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -10,6 +8,18 @@ import android.hardware.SensorManager;
 
 public class SensorActivity implements SensorEventListener {
     private SensorManager sensorManager;
+    private Sensor mAccelerometer;  // 加速度センサ
+    private Sensor mMagneticField; 
+    
+    private static float[] mAccelerometerValues = null;
+    private static float[] mMagneticValues      = null;
+    private static float[] orientationValues    = new float[3];
+    private static float[] RotaionMatrixR       = new float[16];// 4x4 matrix
+    private static float[] remapRotaionMatrixR  = new float[16];// 4x4 matrix
+    private static float[] RotaionMatrixI       = new float[16];// 4x4 matrix
+    
+    private static float conpassDegree;
+
     
   //THRESHOLD ある値以上を検出するための閾値
   	protected final static double THRESHOLD = 0.8;
@@ -49,17 +59,21 @@ public class SensorActivity implements SensorEventListener {
   	public static String getIsMoving(){
   		return Boolean.toString(isMoving);
   	}
+  	
+  	public static float getConpassDegree(){
+  		return conpassDegree;
+  	}
+    
     
     
     public SensorActivity(Context context) {
     	sensorManager = (SensorManager)context.getSystemService(Context.SENSOR_SERVICE);
-
-		List<Sensor> sensors = sensorManager.getSensorList(Sensor.TYPE_ACCELEROMETER);
+    	
+    	mAccelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);  //加速度センサー
+		mMagneticField = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD); //磁気センサー
 		
-		if(sensors.size()>0){
-			Sensor s = sensors.get(0);
-			sensorManager.registerListener(this, s,SensorManager.SENSOR_DELAY_UI);
-		}
+		sensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_UI);
+		sensorManager.registerListener(this, mMagneticField, SensorManager.SENSOR_DELAY_UI);
     }
     
 	public void stopSensor(SensorManager manager) {	
@@ -78,6 +92,9 @@ public class SensorActivity implements SensorEventListener {
 	@Override
 	public void onSensorChanged(SensorEvent event) {
 		if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+			mAccelerometerValues = event.values.clone();
+			
+			/**　移動しているかどうかの判定アルゴリズム　**/
 			// ローパスフィルタで重力値を抽出　Isolate the force of gravity with the low-pass filter.
 			currentOrientationValues[0] = event.values[0] * 0.1f + currentOrientationValues[0] * (1.0f - 0.1f);
 			currentOrientationValues[1] = event.values[1] * 0.1f + currentOrientationValues[1] * (1.0f - 0.1f);
@@ -116,10 +133,27 @@ public class SensorActivity implements SensorEventListener {
 				}
 			}
  
-			// 状態更新
 			old_x = currentAccelerationValues[0];
 			old_y = currentAccelerationValues[1];
 			old_z = currentAccelerationValues[2];
+		} else if(event.sensor.getType() == Sensor.TYPE_MAGNETIC_FIELD) {
+			mMagneticValues = event.values.clone();
 		}
-	}
+		
+        if (mAccelerometerValues != null && mMagneticValues != null) {
+            // 回転行列の取得
+            SensorManager.getRotationMatrix(RotaionMatrixR, RotaionMatrixI, mAccelerometerValues, mMagneticValues);
+            // 画面の向きを考慮して、行列に反映
+            SensorManager.remapCoordinateSystem(RotaionMatrixR, SensorManager.AXIS_X, SensorManager.AXIS_Y, remapRotaionMatrixR);
+            // 傾きの取得
+            SensorManager.getOrientation(remapRotaionMatrixR, orientationValues);
+        }
+
+		
+		conpassDegree = (float)Math.toDegrees(orientationValues[0]);
+		if(ShelterMapActivity.getUpdateCompass()) {
+			ShelterMapActivity.updateCompassView();
+		}
+    }
+    
 }

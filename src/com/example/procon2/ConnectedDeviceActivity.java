@@ -16,7 +16,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.BaseAdapter;
+import android.widget.CompoundButton;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 public class ConnectedDeviceActivity extends Fragment implements OnClickListener{
@@ -28,6 +30,10 @@ public class ConnectedDeviceActivity extends Fragment implements OnClickListener
 	
 	private static List<ConnectedDeviceListView> dataList;
 	private static ChatAdapter adapter;
+	
+	private static Switch dtnSwitch;
+	
+	private static TextView dataSize;
 	
 	private static Timer timer;
 
@@ -58,10 +64,13 @@ public class ConnectedDeviceActivity extends Fragment implements OnClickListener
 	        public void run() {
 	        	connectedDeviceList = new ArrayList<String>(isConnectedDeviceList);
 	        	
+	        	
         		handler.post(new Runnable() {
 	                @Override
 	                public void run() {
 	                	dataList.clear();
+	    	        	adapter.notifyDataSetChanged();
+	                	
 	                	for(int i = 0;i < connectedDeviceList.size(); i++) {
 		                	dataList.add(0 ,new ConnectedDeviceListView(connectedDeviceList.get(i)));
 				    	    adapter.notifyDataSetChanged();
@@ -71,21 +80,48 @@ public class ConnectedDeviceActivity extends Fragment implements OnClickListener
                 });
         		
         		isConnectedDeviceList.clear();
+        		
 	        }
 	      }, 0, 4000    //開始遅延(何ミリ秒後に開始するか)と、周期(何ミリ秒ごとに実行するか)
 	    );
+	}
+	
+	public static void updateRecivedSize() {
+		dataSize.setText("これまで受信したデータ数:" + Integer.toString(DTNMessageCollection.getHash().size()));
 	}
 	
 	@Override
     public View onCreateView( LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.connected_device_layout, container, false);
         
+        dataSize = (TextView) v.findViewById(R.id.dataSize);
+        updateRecivedSize();
+        
         connectedDeviceListView = v.findViewById(R.id.connectedListView);
-    
 	    ((ListView)connectedDeviceListView).setAdapter(adapter);
+	    
+	    dtnSwitch = (Switch) v.findViewById(R.id.dtnSwitch);
+
+	    
+	    dtnSwitch.setChecked(DeviceInfo.isDtnRecive());
+	    
+	    dtnSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+	        @Override
+	        public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+	            if(isChecked == true) {
+	            	DeviceInfo.setDtnRecive(true);
+	            	DeviceInfo.setDtnSend(true);
+	            } else {
+	            	DeviceInfo.setDtnRecive(false);
+	            	DeviceInfo.setDtnSend(false);
+	            }
+	        }
+	    });
+
    
         return v;
     }
+	
 
 	@Override
 	public void onClick(View v) {

@@ -15,6 +15,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TabHost;
 import android.widget.TabHost.TabContentFactory;
+import android.widget.TextView;
+
 import java.util.Random;
 
 public class MainActivity extends FragmentActivity implements android.widget.TabHost.OnTabChangeListener{
@@ -108,7 +110,7 @@ public class MainActivity extends FragmentActivity implements android.widget.Tab
         mTabHost.setOnTabChangedListener(this);
         
         android.widget.TabHost.TabSpec connetedDeviceTabsec = mTabHost.newTabSpec("decviceConnectionTab");
-        connetedDeviceTabsec.setIndicator("通信可能デバイス");
+        connetedDeviceTabsec.setIndicator("通信情報");
         connetedDeviceTabsec.setContent(new DummyTabFactory(this));
         mTabHost.addTab(connetedDeviceTabsec);
         mTabHost.setOnTabChangedListener(this);
@@ -210,23 +212,29 @@ public class MainActivity extends FragmentActivity implements android.widget.Tab
 				}).show();
     			return true;
     			
-    		case R.id.deviceName:
-    		    final EditText editView = new EditText(MainActivity.this);
-    		    new AlertDialog.Builder(MainActivity.this)
-    		        //.setIcon(android.R.drawable.ic_dialog_info)
-    		        .setTitle("端末の名前をしてください")
+    		case R.id.appInformation:
+    			LayoutInflater inflater = (LayoutInflater)this.getSystemService(LAYOUT_INFLATER_SERVICE);
+    	        final View layout = inflater.inflate(R.layout.device_info_menu,(ViewGroup)findViewById(R.id.alertdialog_layout));
+    	        final TextView ip          = (TextView) layout.findViewById(R.id.ip);
+    	        final TextView mac         = (TextView) layout.findViewById(R.id.mac);
+    	        final TextView isDtnRecive = (TextView) layout.findViewById(R.id.isDtnRecive);
+    	        final TextView isDtnSend   = (TextView) layout.findViewById(R.id.isDtnSend);
+    	        final TextView dtnPort     = (TextView) layout.findViewById(R.id.dtnPort);
+    	        
+    	        ip.setText("端末IPアドレス:" + DeviceInfo.getDeviceIP());
+    	        mac.setText("端末MACアドレス:" + DeviceInfo.getDeviceMAC());
+    	        isDtnRecive.setText("DTN通信(受信):" + DeviceInfo.isDtnRecive());
+    	        isDtnSend.setText("DTN通信(送信):" + DeviceInfo.isDtnSend());
+    	        dtnPort.setText("DTN通信(ポート):" + DeviceInfo.getUdpPort() + "\nチャット通信(ポート):" + (DeviceInfo.getUdpPort() + 1000));
 
-    		        .setView(editView)
-    		        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-    		            public void onClick(DialogInterface dialog, int whichButton) {
-    		                DeviceInfo.setDeviceName(editView.getText().toString());
-    		            }
-    		        })
-    		        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-    		            public void onClick(DialogInterface dialog, int whichButton) {
-    		            }
-    		        })
-    		        .show();
+    	        // アラーとダイアログ を生成
+    	        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    	        builder.setView(layout);
+    	        
+
+    	        // 表示
+    	        builder.create().show();
+    			
     		    return true;
     	}
     	return false;

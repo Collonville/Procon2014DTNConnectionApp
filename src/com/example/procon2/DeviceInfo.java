@@ -15,6 +15,9 @@ public class DeviceInfo {
 	static private String deviceMAC;
 	static private String deviceBattery;
 	static private int dtnUpdateTime = 2000;
+	
+	static private boolean dtnRecive = true;
+	static private boolean dtnSend   = true;
 
 	final  static private int udpPort = 50000;
 	
@@ -42,7 +45,8 @@ public class DeviceInfo {
 		DeviceInfo.deviceName = deviceName;
 	}
 
-	@SuppressLint("DefaultLocale") public static String getDeviceIP() {
+	@SuppressLint("DefaultLocale") 
+	public static String getDeviceIP() {
 		info = manager.getConnectionInfo();
 		ipAdr = info.getIpAddress();
 		deviceIP = String.format("%02d.%02d.%02d.%02d", (ipAdr>>0)&0xff, (ipAdr>>8)&0xff, (ipAdr>>16)&0xff, (ipAdr>>24)&0xff);
@@ -80,5 +84,21 @@ public class DeviceInfo {
 
 	public static void setDtnUpdateTime(int dtnUpdateTime) {
 		DeviceInfo.dtnUpdateTime = dtnUpdateTime;
+	}
+
+	public static boolean isDtnRecive() {
+		return dtnRecive;
+	}
+
+	public static void setDtnRecive(boolean dtnConnect) {
+		DeviceInfo.dtnRecive = dtnConnect;
+	}
+
+	public static boolean isDtnSend() {
+		return dtnSend;
+	}
+
+	public static void setDtnSend(boolean dtnSend) {
+		DeviceInfo.dtnSend = dtnSend;
 	}
 }

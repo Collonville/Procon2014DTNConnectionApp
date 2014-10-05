@@ -3,12 +3,17 @@ package com.example.procon2;
 import android.graphics.Bitmap;
 
 public class PersonInfo {
-	private static String name;                //–¼
-	private static String nameKana;
-	private static String age;                 //”N—î
-	private static String sex;                 //«•Ê
-	private static String insuranceCardNumber; //•ÛŒ¯Ø”Ô†
-	private static Bitmap   picture;             //‰æ‘œ
+	final static String injuryItemns[]   = new String[] {"‰ö‰ä–³‚µ Fine", "ŒyÇ@Mild case(C‚è‚È‚Ç)", "’†“™Ç@Moderate Disease (f’f‚ª•K—v)"};
+	final static String bloodTypeItems[] = new String[] {"A", "B", "O", "AB"};
+	
+	private static String name     = "No Data"; //–¼
+	private static String nameKana = "No Data"; //‚©‚È•¶š
+	private static String age      = "No Data"; //”N—î
+	private static String sex      = "No Data"; //«•Ê
+	private static String insuranceCardNumber = "No Data"; //•ÛŒ¯Ø”Ô†
+	private static int    injury   = -1;
+	private static int    bloodTypeId = -1;
+	private static Bitmap picture;              //‰æ‘œ
 	
 	
 	public static String getName() {
@@ -46,5 +51,24 @@ public class PersonInfo {
 	}
 	public static void setNameKana(String nameKana) {
 		PersonInfo.nameKana = nameKana;
+	}
+	public static String getInjury() {
+		return injuryItemns[injury];
+	}
+	public static int getInjuryId() {
+		return injury;
+	}
+	public static void setInjury(int id) {
+		PersonInfo.injury = id;
+	}
+	
+	public static int getBloodTypeId() {
+		return bloodTypeId;
+	}
+	public static String getBloodType() {
+		return bloodTypeItems[bloodTypeId];
+	}
+	public static void setBloodTypeId(int bloodTypeId) {
+		PersonInfo.bloodTypeId = bloodTypeId;
 	}
 }
