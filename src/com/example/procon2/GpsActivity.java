@@ -20,7 +20,8 @@ public class GpsActivity {
 
 	public GpsActivity(Context contect) {
 		// LocationManagerのオブジェクト取得
-		mLocationManager = (LocationManager) contect.getSystemService(Context.LOCATION_SERVICE);
+		mLocationManager = (LocationManager) contect
+				.getSystemService(Context.LOCATION_SERVICE);
 		mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,
 				100, // 時間指定：10秒間隔
 				0, // 距離指定：10m間隔

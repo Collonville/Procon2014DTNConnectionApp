@@ -20,10 +20,10 @@
         android:layout_alignBaseline="@+id/prefectureTextView"
         android:layout_alignBottom="@+id/prefectureTextView"
         android:layout_centerHorizontal="true"
-        android:text="市町村:"
+        android:layout_marginTop="5dip"
         android:gravity="center"
-        android:textSize="20sp"
-        android:layout_marginTop="5dip" />
+        android:text="市町村:"
+        android:textSize="20sp" />
 
     <Spinner
         android:id="@+id/citiesSpinner"
@@ -39,10 +39,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="5dip"
         android:gravity="center"
         android:text="県名:"
-        android:textSize="20sp" 
-        android:layout_marginTop="5dip"/>
+        android:textSize="20sp" />
 
     <ImageView
         android:id="@+id/compasImageView"
@@ -61,7 +61,6 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/compasImageView" >
-
     </ListView>
 
     <ImageView
@@ -72,8 +71,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/compasImageView"
-        android:src="@drawable/abc_ab_bottom_solid_dark_holo"
-        android:background="@null"  />
+        android:background="@null"
+        android:src="@drawable/abc_ab_bottom_solid_dark_holo" />
 
     <TextView
         android:id="@+id/textView1"
@@ -82,8 +81,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignTop="@+id/compasImageView"
         android:text="緯度:"
-        android:textColor="#FFFFFF"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FFFFFF" />
 
     <TextView
         android:id="@+id/latitude"
@@ -137,6 +136,6 @@
         android:layout_alignLeft="@+id/latitude"
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#FFFFFF"  />
+        android:textColor="#FFFFFF" />
 
 </RelativeLayout>

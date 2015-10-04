@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- id : 4 -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="834dp"
+        android:layout_gravity="fill"
+        android:gravity="fill"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#37909d"
+            android:gravity="center"
+            android:height="50dp"
+            android:text="緊急連絡先(Emergency Contact)"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/em110"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/title"
+            android:background="#4197ee"
+            android:gravity="center"
+            android:height="70dp"
+            android:text="110"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/em110text"
+            android:layout_width="410dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/em110"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/em110"
+            android:layout_toRightOf="@+id/em110"
+            android:background="#484b4b"
+            android:gravity="center"
+            android:height="70dp"
+            android:text="警察の通信指令センターにつながります。\n事件事故の際にダイヤルしてください"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/em117"
+            android:layout_width="184dp"
+            android:layout_height="match_parent"
+            android:layout_alignRight="@+id/em110"
+            android:layout_below="@+id/em110"
+            android:layout_marginTop="6dp"
+            android:background="#4197ee"
+            android:gravity="center"
+            android:height="70dp"
+            android:text="117"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/em118"
+            android:layout_width="184dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/em117"
+            android:layout_marginTop="6dp"
+            android:layout_toLeftOf="@+id/em118text"
+            android:background="#4197ee"
+            android:gravity="center"
+            android:height="70dp"
+            android:text="118"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/em117text"
+            android:layout_width="410dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/em117"
+            android:layout_alignLeft="@+id/em110text"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/em117"
+            android:background="#484b4b"
+            android:gravity="center"
+            android:height="50dp"
+            android:text="現在の時刻を確認できます"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/em118text"
+            android:layout_width="410dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/em118"
+            android:layout_alignLeft="@+id/em117text"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/em118"
+            android:background="#484b4b"
+            android:gravity="center"
+            android:height="50dp"
+            android:text="海上保安庁につながります。\n海上における事件事故の際にダイヤルしてください"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/em119"
+            android:layout_width="184dp"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/em118"
+            android:layout_marginTop="6dp"
+            android:layout_toLeftOf="@+id/em118text"
+            android:background="#4197ee"
+            android:gravity="center"
+            android:height="70dp"
+            android:text="119"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/em119text"
+            android:layout_width="410dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/em119"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/em119"
+            android:layout_toRightOf="@+id/em119"
+            android:background="#484b4b"
+            android:gravity="center"
+            android:height="50dp"
+            android:text="災害救急情報センターにつながります。\n火事、救助の要請の際にダイヤルしてください"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/em171"
+            android:layout_width="184dp"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/em119"
+            android:layout_marginTop="6dp"
+            android:layout_toLeftOf="@+id/em119text"
+            android:background="#4197ee"
+            android:gravity="center"
+            android:height="70dp"
+            android:text="171"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/em171text"
+            android:layout_width="410dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/em171"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/em171"
+            android:layout_toRightOf="@+id/em171"
+            android:background="#484b4b"
+            android:gravity="center"
+            android:height="50dp"
+            android:text="災害用伝言ダイヤルセンターにつながります。\n音声ガイダンスに従って伝言の録音や再生を行ってください"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/em171"
+            android:layout_marginTop="12dp"
+            android:background="#37909d"
+            android:gravity="center"
+            android:height="50dp"
+            android:text="117について(About 117 Call)"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/TextView01"
+            android:text="117は災害用電話ダイヤルと呼ばれています。\n地震などの災害発生時には、多くの人が一斉に電話をかけるため、電話がかかりにくくなります。\nこのような電話がかかりにくい状態でも、家族間の安否確認や集合場所の連絡に利用することができます。災害時優先電話は発信のみ優先扱いとなり、着信については一般電話と同じです。\n緊急時には発信用として使用しましょう。\n171をダイヤルした後は音声案内に従い、ダイヤルをプッシュする必要があります。ガイダンスが行われますのでそれに従ってください。ここで使用する電話は待つ電話と掛ける電話を分けておくと良いでしょう。"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/title"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/em110"
+            android:src="@android:drawable/stat_sys_phone_call" />
+    </RelativeLayout>
+
+</ScrollView>

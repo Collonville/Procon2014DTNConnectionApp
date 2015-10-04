@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- id : 11 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="fill"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="#37909d"
+            android:gravity="center"
+            android:height="70dp"
+            android:text="RICE(Rest Icing Compression Elevation)\n②RICE処置-Rest(安静)について"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/TextView05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView1"
+            android:text="　ケガを負った際に、患部を無理に動かしたり体重をかけたりすると、傷ついている血管や筋肉が更に傷つくことで、痛みが増し、悪化してしまうことがあります。出血が認められる場合では、患者の運動と共に脈拍、血圧が上昇し出血がひどくなることがあります。"
+            android:textSize="19sp" />
+
+        <TextView
+            android:id="@+id/TextView04"
+            android:layout_width="410dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/TextView05"
+            android:layout_marginTop="17dp"
+            android:background="#FF8C00"
+            android:gravity="center"
+            android:height="40dp"
+            android:text="ポイント"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/TextView03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/TextView04"
+            android:gravity="center"
+            android:text="痛まない姿勢で患部を休ませましょう。\n・下半身のケガでは床で休ませる\n・上半身のケガでは椅子に座って休ませる\n加えて、患部を動かさないようにしましょう。"
+            android:textSize="19sp" />
+    </RelativeLayout>
+
+</LinearLayout>

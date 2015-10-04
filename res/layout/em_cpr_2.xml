@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- id : 6 -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="834dp"
+        android:layout_gravity="fill"
+        android:gravity="fill"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="#37909d"
+            android:gravity="center"
+            android:height="70dp"
+            android:text="心肺蘇生法(Cardio Pulmonary Resuscitation)\n②心配蘇生法の手順1"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/em110text"
+            android:layout_width="410dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/textView1"
+            android:layout_toRightOf="@+id/em110"
+            android:background="#484b4b"
+            android:gravity="center"
+            android:height="45dp"
+            android:text="意識の確認"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/em110"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignTop="@+id/em110text"
+            android:background="#4197ee"
+            android:gravity="center"
+            android:height="45dp"
+            android:text="手順:1"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/em110"
+            android:text="　まずは患者の反応があるか確認をしましょう。\n肩などをたたきながら「大丈夫ですか」等の声掛けを行いましょう。\n応答やしぐさがない場合はすぐに心肺蘇生に入る必要があります。\n\n　確認が終わったら、119番通報とAEDの手配を行いましょう。この時「誰か～」というのではなく、「あなたは○○をお願いします」といった方が良いでしょう。協力者がいない場合は119番通報を優先します。"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView2"
+            android:layout_marginTop="12dp"
+            android:layout_toLeftOf="@+id/em110text"
+            android:background="#4197ee"
+            android:gravity="center"
+            android:height="45dp"
+            android:text="手順:2"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/TextView02"
+            android:layout_width="410dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/TextView01"
+            android:layout_alignBottom="@+id/TextView01"
+            android:layout_alignLeft="@+id/em110text"
+            android:layout_alignParentRight="true"
+            android:background="#484b4b"
+            android:gravity="center"
+            android:height="45dp"
+            android:text="気道の確保"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/TextView03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/TextView01"
+            android:text="　気道の確保を行います。患者の意識がなくなると、舌を支えられなくなり舌で気道をふさいでしまい窒息に陥るケースも存在します。\n\n　片手を額に当てもう一方の手の人差指となかゆびのにほんを顎先に当て頭を後ろにのけぞらせ顎先を上げることで、患者の喉の奥を広げ空気を這いに通りやすくしましょう。"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/TextView04"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/TextView03"
+            android:layout_marginTop="12dp"
+            android:background="#4197ee"
+            android:gravity="center"
+            android:height="45dp"
+            android:text="手順:3"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/TextView05"
+            android:layout_width="410dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/TextView04"
+            android:layout_alignBottom="@+id/TextView04"
+            android:layout_alignLeft="@+id/TextView02"
+            android:layout_alignParentRight="true"
+            android:background="#484b4b"
+            android:gravity="center"
+            android:height="45dp"
+            android:text="自発呼吸の確認"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/TextView06"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/TextView04"
+            android:text="　患者の胸と腹部を10秒以内で観察を行い、正常なリズムの呼吸が行われているか、普段通りの息があるかないかを確認します。\n\n　しゃくりあげるような呼吸が行われているときは異常な呼吸としてください。正常な呼吸がない場合は直ちに心臓マッサージを行います。"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+</ScrollView>

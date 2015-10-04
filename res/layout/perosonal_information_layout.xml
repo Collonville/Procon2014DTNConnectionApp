@@ -147,7 +147,7 @@
         android:layout_alignTop="@+id/injury"
         android:gravity="center"
         android:text="No Data"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:width="260dp" />
 
     <ImageView
@@ -159,5 +159,52 @@
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/nameView"
         android:height="5dp" />
+
+    <TextView
+        android:id="@+id/TextView03"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/add"
+        android:background="#37909d"
+        android:gravity="center"
+        android:height="50dp"
+        android:text="安否情報リスト"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp" />
+
+    <ListView
+        android:id="@+id/personalListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/TextView03"
+        android:height="100sp" >
+
+    </ListView>
+
+    <EditText
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/changeInjuryBtn"
+        android:ems="10" 
+        android:hint="ここに送信したいメッセージを入力してください">
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/message"
+        android:text="登録" />
 
 </RelativeLayout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- id : 9 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="fill"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="#37909d"
+            android:gravity="center"
+            android:height="70dp"
+            android:text="心肺蘇生法(Cardio Pulmonary Resuscitation)\n⑤気道異物除去の手順"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/TextView02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView1"
+            android:text="　異物除去は、可能であれば、「腹部突き上げ法」を優先してください。また妊婦や幼児では、腹部突き上げ法は行わず、背部叩打法のみ行ってください。"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/em110"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/TextView02"
+            android:layout_marginTop="12dp"
+            android:background="#4197ee"
+            android:gravity="center"
+            android:height="45dp"
+            android:text="方法:1"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/em110text"
+            android:layout_width="410dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/em110"
+            android:layout_alignBottom="@+id/em110"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/em110"
+            android:background="#484b4b"
+            android:gravity="center"
+            android:height="45dp"
+            android:text="腹部突き上げ法"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/em110"
+            android:text="　まず、患者の後ろに回り、ウエスト付近に手をまわします。一方の手でへその位置を確認し、もう一方の手で握り拳を作り、親指側を患者のへその上方で、みぞおちより十分下方に当てます。へそを確認した手で握り拳を握り、手前情報に圧迫するように突き上げます。"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/TextView03"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/TextView01"
+            android:layout_marginTop="12dp"
+            android:background="#4197ee"
+            android:gravity="center"
+            android:height="45dp"
+            android:text="方法:2"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/TextView04"
+            android:layout_width="410dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/TextView03"
+            android:layout_alignBottom="@+id/TextView03"
+            android:layout_alignLeft="@+id/em110text"
+            android:layout_alignParentRight="true"
+            android:background="#484b4b"
+            android:gravity="center"
+            android:height="45dp"
+            android:text="背部叩打法"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/TextView05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/TextView03"
+            android:text="　患者の後ろから、手のひらの基部で、左右の肩甲骨の中間あたりを力強く連続して何度もたたいてください。乳児の場合は、片腕にうつぶせで乗せ手のひらで乳児の顔を支えつつ、頭を体より低く保ったのちたたいてください。"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+</LinearLayout>

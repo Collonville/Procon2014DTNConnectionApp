@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- id : 14 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="fill"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="#37909d"
+            android:gravity="center"
+            android:height="70dp"
+            android:text="RICE(Rest Icing Compression Elevation)\n⑤RICE処置-Elevation(高挙)について"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/TextView05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView1"
+            android:text="ケガを負うと、損傷部分から血液や組織液があふれ出してたまるために腫れが起こり、また出血が起こります。そこで、患部をできるだけ自分の心臓よりも高い位置に保つことで、重力によって出血を抑え、血液が心臓に戻りやすくなり、腫れを抑え、痛みを和らげることができます。
+　前述のRest(安静)と合わせて行い、維持することが大切です。"
+            android:textSize="19sp" />
+
+        <TextView
+            android:id="@+id/TextView04"
+            android:layout_width="410dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/TextView05"
+            android:layout_marginTop="17dp"
+            android:background="#FF8C00"
+            android:gravity="center"
+            android:height="40dp"
+            android:text="ポイント"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/TextView03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/TextView04"
+            android:gravity="center"
+            android:text="患部を安定したもの、たとえば椅子や台、クッション、枕などの手ごろな高さのもので支え心臓よりも高い位置で安静を維持します。この時、意識的に高く上げるのではなく、力を入れずに高く上げることができるようにしましょう。"
+            android:textSize="19sp" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,13 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+<!-- id : 1 -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="injury" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#37909d"
+            android:gravity="center"
+            android:height="50dp"
+            android:text="ケガ別治療"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#484b4b"
+            android:gravity="center"
+            android:height="45dp"
+            android:text="やけどの治療法"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="651dp"
+            android:gravity="center"
+            android:text="やけどを冷やす時間はおおよそ３～５分\nでよいといわれています。\n\n・手足のやけど
+水道水などで冷やしましょう。
+\n\n・顔や頭のやけど
+　シャワーなどで水をかけ続けましょう。
+かけられない場合は氷水で
+冷やしたタオルを当てましょう。
+\n・目や耳のやけど
+　保冷剤や氷を包んだタオルを、
+こまめに替えて冷やしましょう。
+\n・全身や広範囲のやけど
+水をためた浴槽の中に患部をつけたり、
+水に浸したタオルなどで身体を包むように冷やしましょう。"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/TextView02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#484b4b"
+            android:gravity="center"
+            android:height="45dp"
+            android:text="熱中症の治療法"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="308dp"
+            android:gravity="center"
+            android:text="基本は\n
+「冷却」「休息」「水分補給」の３つです。\n\n涼しい場所で休ませて、安静にし、\n患者にスポーツドリンクや経口保水液\nを飲ませるといったことが挙げられます。\nしかし、意識障害や吐き気がある場合は、医療機関へ搬送してください。"
+            android:textSize="28sp" />
+    </LinearLayout>
+
+</ScrollView>

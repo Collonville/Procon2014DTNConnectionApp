@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- id : 5 -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="fill"
+        android:gravity="fill"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="#37909d"
+            android:gravity="center"
+            android:height="70dp"
+            android:text="心肺蘇生法(Cardio Pulmonary Resuscitation)\n①救急蘇生法について"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView1"
+            android:text="　現在の日本では、救急車の平均到着時間はおよそ8.1分といわれています。心停止から１分ごとに、救命率は7~10％減少し続けます。\n\n　その間に一般市民による迅速な心肺蘇生とAEDの仕様は、救急隊や医療機関での処置に比べて、心停止患者の救命社会復帰に大きく貢献するといわれています。"
+            android:textSize="19sp" />
+    </RelativeLayout>
+
+</ScrollView>

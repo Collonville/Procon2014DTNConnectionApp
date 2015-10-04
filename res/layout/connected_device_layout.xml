@@ -4,45 +4,160 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <Switch
-        android:id="@+id/dtnSwitch"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="DTN通信" 
-        android:textSize="20sp"
-        android:checked="true"/>
+        android:background="#37909d"
+        android:gravity="center"
+        android:height="50dp"
+        android:text="端末情報"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp" />
 
     <ListView
         android:id="@+id/connectedListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1" >
-
+        android:layout_below="@+id/TextView03"
+        android:height="100sp" >
     </ListView>
+
+    <TextView
+        android:id="@+id/ip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/TextView01"
+        android:gravity="center"
+        android:text="ip"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/mac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/ip"
+        android:gravity="center"
+        android:text="mac"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/dtnPort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/mac"
+        android:gravity="center"
+        android:text="dtnPort"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/dataSize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView1"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/dtnSwitch"
+        android:layout_below="@+id/gps"
         android:gravity="center"
-        android:text="TextView"
+        android:text="受信データ数"
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/dtnSwitch"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/TextView02"
         android:gravity="center"
-        android:text="通信可能な隣接デバイス情報"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:text="通信を切ることにより電池の節約につながります "
+        android:textSize="20sp" />
+
+    <Switch
+        android:id="@+id/chatSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView2"
+        android:checked="true"
+        android:text="チャット通信"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/deleteAllDataBtn"
+        android:layout_marginTop="12dp"
+        android:background="#37909d"
+        android:gravity="center"
+        android:height="50dp"
+        android:text="通信設定"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp" />
+
+    <Button
+        android:id="@+id/deleteAllDataBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/dataSize"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/button_design2"
+        android:text="保存データの全削除"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:width="300dp" />
+
+    <TextView
+        android:id="@+id/TextView03"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/chatSwitch"
+        android:layout_marginTop="12dp"
+        android:background="#37909d"
+        android:gravity="center"
+        android:height="50dp"
+        android:text="通信可能な隣接デバイス"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp" />
+
+    <Switch
+        android:id="@+id/dtnSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/chatSwitch"
+        android:layout_alignBottom="@+id/chatSwitch"
+        android:layout_alignParentRight="true"
+        android:checked="true"
+        android:text="DTN通信"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/gps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/dtnPort"
+        android:gravity="center"
+        android:text="gps"
+        android:textSize="20sp" />
 
 </RelativeLayout>

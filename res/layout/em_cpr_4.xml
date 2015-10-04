@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- id : 8 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="fill"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="#37909d"
+            android:gravity="center"
+            android:height="70dp"
+            android:text="心肺蘇生法(Cardio Pulmonary Resuscitation)\n④気道異物除去について"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/TextView02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView1"
+            android:text="　気道異物による窒息とは、食事中に食べ物が気道に詰まるなどで息ができなくなった状態のことを指します。\n　まずは窒息に気が付くことが大切です。患者は多くの場合声が出なくなっています。のどをつかむ仕草は「窒息のサイン」と呼ばれています。"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/TextView02"
+            android:layout_marginTop="12dp"
+            android:background="#6495ED"
+            android:gravity="center"
+            android:height="45dp"
+            android:text="意識がある場合"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/TextView03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/TextView01"
+            android:text="　119番通報する前に、異物除去を行います。異物除去の方法には、「腹部突き上げ法と」「背部叩打法」があります。\n　異物がとれるか意識がなくなるまで続けてください。"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/TextView04"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/TextView03"
+            android:layout_marginTop="12dp"
+            android:background="#6495ED"
+            android:gravity="center"
+            android:height="45dp"
+            android:text="意識がない場合"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/TextView05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/TextView04"
+            android:text="　先に119番通報を行いましょう。その後心肺蘇生法を開始してください。心肺蘇生中に異物を発見した場合は、取り除きましょう。ただし、見えない場合はやみくもに指を入れて探らないようにしてください。また異物を探すために心肺蘇生法を中断しないようにしましょう。"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/toCpr_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/TextView05"
+            android:text="心肺蘇生法" />
+    </RelativeLayout>
+
+</LinearLayout>

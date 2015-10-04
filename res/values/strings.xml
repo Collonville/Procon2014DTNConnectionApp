@@ -1,108 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Procon2</string>
+    <string name="app_name">ADTNC</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     
     <string-array name="prefecture">
-		<item>北海道</item>
-	    <item>青森県</item>
-	    <item>岩手県</item>
-	    <item>宮城県</item>
-	    <item>秋田県</item>
-	    <item>山形県</item>
-	    <item>福島県</item>
-	    <item>茨城県</item>
-	    <item>栃木県</item>
-	    <item>群馬県</item>
-	    <item>埼玉県</item>
-	    <item>千葉県</item>
-	    <item>東京都</item>
-	    <item>神奈川県</item>
-	    <item>新潟県</item>
+        <item>埼玉県</item>
+        <item>千葉県</item>
 	    <item>富山県</item>
-	    <item>石川県</item>
 	    <item>福井県</item>
-	    <item>山梨県</item>
-	    <item>長野県</item>
-	    <item>岐阜県</item>
-	    <item>静岡県</item>
-	    <item>愛知県</item>
-	    <item>三重県</item>
-	    <item>滋賀県</item>
-	    <item>京都府</item>
-	    <item>大阪府</item>
-	    <item>兵庫県</item>
-	    <item>奈良県</item>
-	    <item>和歌山県</item>
-	    <item>鳥取県</item>
-	    <item>島根県</item>
-	    <item>岡山県</item>
-	    <item>広島県</item>
-	    <item>山口県</item>
-	    <item>徳島県</item>
-	    <item>香川県</item>
-	    <item>愛媛県</item>
-	    <item>高知県</item>
-	    <item>福岡県</item>
-	    <item>佐賀県</item>
-	    <item>長崎県</item>
-	    <item>熊本県</item>
-	    <item>大分県</item>
-	    <item>宮崎県</item>
-	    <item>鹿児島県</item>
-	    <item>沖縄県</item>
 	</string-array>
 	
     <string-array name="englishPrefecture">
-		<item>Hokkaidou</item>
-	    <item>Aomori</item>
-	    <item>Iwate</item>
-	    <item>Miyagi</item>
-	    <item>Akita</item>
-	    <item>Yamagata</item>
-	    <item>Fukushima</item>
-	    <item>Ibaraki</item>
-	    <item>Tochigi</item>
-	    <item>Gunma</item>
-	    <item>Saitama</item>
-	    <item>Chiba</item>
-	    <item>Toukyo</item>
-	    <item>Kanagawa</item>
-	    <item>Niigata</item>
+		<item>Saitama</item>
+		<item>Chiba</item>
 	    <item>Toyama</item>
-	    <item>Ishikawa</item>
 	    <item>Fukui</item>
-	    <item>Yamanasi</item>
-	    <item>Nagano</item>
-	    <item>Gifu</item>
-	    <item>Shizuoka</item>
-	    <item>Aichi</item>
-	    <item>Mie</item>
-	    <item>Saga</item>
-	    <item>Kyouto</item>
-	    <item>Oosaka</item>
-	    <item>Hyougo</item>
-	    <item>Nara</item>
-	    <item>Wakayama</item>
-	    <item>Torroti</item>
-	    <item>Simane</item>
-	    <item>Okayama</item>
-	    <item>Hirosima</item>
-	    <item>Yamaguchi</item>
-	    <item>Tokushima</item>
-	    <item>Kagawa</item>
-	    <item>Ehime</item>
-	    <item>Kouchi</item>
-	    <item>Fukuoka</item>
-	    <item>Saga</item>
-	    <item>Nagasaki</item>
-	    <item>Kumamoto</item>
-	    <item>Ooita</item>
-	    <item>Miyazaki</item>
-	    <item>Kagoshima</item>
-	    <item>Okinawa</item>
 	</string-array>
     
 

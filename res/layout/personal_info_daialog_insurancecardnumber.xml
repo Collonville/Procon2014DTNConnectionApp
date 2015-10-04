@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:gravity="center"
         android:text="保険証番号(Insurance Card Number)"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/insuranceCarNumberInput"
@@ -23,8 +23,8 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/insuranceCarNumberView"
         android:ems="10"
-        android:maxLength="8"
-        android:inputType="number" >
+        android:inputType="number"
+        android:maxLength="8" >
 
         <requestFocus />
     </EditText>

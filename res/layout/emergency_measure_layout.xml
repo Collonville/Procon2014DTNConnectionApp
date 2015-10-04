@@ -8,15 +8,15 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imageButton1"
-        android:layout_alignRight="@+id/imageButton1"
-        android:layout_below="@+id/imageButton1"
+        android:layout_alignLeft="@+id/bleedingImageButton"
+        android:layout_alignRight="@+id/bleedingImageButton"
+        android:layout_below="@+id/bleedingImageButton"
         android:gravity="center"
         android:text="止血方法"
         android:textSize="20sp" />
 
     <ImageButton
-        android:id="@+id/imageButton1"
+        android:id="@+id/bleedingImageButton"
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_alignParentLeft="true"
@@ -38,26 +38,6 @@
         android:text="心肺蘇生法"
         android:textSize="20sp" />
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:layout_above="@+id/TextView01"
-        android:layout_centerHorizontal="true"
-        android:adjustViewBounds="true"
-        android:background="@null"
-        android:scaleType="fitXY"
-        android:src="@drawable/l_124" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/TextView01"
-        android:text="RICE処置" />
-
     <TextView
         android:id="@+id/TextView02"
         android:layout_width="wrap_content"
@@ -78,5 +58,122 @@
         android:background="@null"
         android:scaleType="fitXY"
         android:src="@drawable/l_181" />
+
+    <ViewFlipper
+        android:id="@+id/viewFlipper1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/emergencyContactButton" >
+
+        <include
+            android:id="@+id/em_bleeding"
+            layout="@layout/em_bleeding" />
+
+        <include
+            android:id="@+id/em_cpr"
+            layout="@layout/em_cpr" />
+
+        <include
+            android:id="@+id/em_rice"
+            layout="@layout/em_rice" />
+
+        <include
+            android:id="@+id/em_injury"
+            layout="@layout/em_injury" />
+
+        <include
+            android:id="@+id/em_contact"
+            layout="@layout/emin_contact" />
+
+        <include
+            android:id="@+id/em_cpr_1"
+            layout="@layout/em_cpr_1" />
+
+        <include
+            android:id="@+id/em_cpr_2"
+            layout="@layout/em_cpr_2" />
+
+        <include
+            android:id="@+id/em_cpr_3"
+            layout="@layout/em_cpr_3" />
+
+        <include
+            android:id="@+id/em_cpr_4"
+            layout="@layout/em_cpr_4" />
+
+        <include
+            android:id="@+id/em_cpr_5"
+            layout="@layout/em_cpr_5" />
+
+        <include
+            android:id="@+id/em_rice_1"
+            layout="@layout/em_rice_1" />
+
+        <include
+            android:id="@+id/em_rice_2"
+            layout="@layout/em_rice_2" />
+
+        <include
+            android:id="@+id/em_rice_3"
+            layout="@layout/em_rice_3" />
+
+        <include
+            android:id="@+id/em_rice_4"
+            layout="@layout/em_rice_4" />
+
+        <include
+            android:id="@+id/em_rice_5"
+            layout="@layout/em_rice_5" />
+    </ViewFlipper>
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/bleedingImageButton"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="fitXY"
+        android:src="@drawable/l_124" />
+
+    <Button
+        android:id="@+id/emergencyContactButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView1"
+        android:background="@drawable/button_design3"
+        android:text="緊急連絡先"
+        android:textSize="20sp" />
+
+    <ImageButton
+        android:id="@+id/riceBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TextView01"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/imageButton3"
+        android:layout_toRightOf="@+id/TextView01"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="fitXY"
+        android:src="@drawable/rice" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/emergencyContactButton"
+        android:layout_alignLeft="@+id/riceBtn"
+        android:layout_alignRight="@+id/riceBtn"
+        android:layout_below="@+id/riceBtn"
+        android:gravity="center"
+        android:text="RICE処置"
+        android:textSize="20sp" />
 
 </RelativeLayout>

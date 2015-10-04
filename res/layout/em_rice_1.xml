@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- id : 10 -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="1083dp"
+        android:layout_gravity="fill"
+        android:gravity="fill"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="#37909d"
+            android:gravity="center"
+            android:height="70dp"
+            android:text="RICE(Rest Icing Compression Elevation)\n①RICE処置とは"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/textView1"
+            android:gravity="center"
+            android:text="RICEとは、ケガの応急手当の４つの原則である、\nRest(安静)・Ice(冷却)・Compression(圧迫)・Elevation(高挙)\nそれぞれの頭文字をとった言葉です。"
+            android:textSize="19sp" />
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/textView2"
+            android:text="　ケガを悪化させず良好な状態を保っておくことで、短期間での治療に効果が見られます。これから紹介するRICE処置は代表的な応急処置の一つです。ケガを負ってしまった際、または周りの人がケガを負ってしまった際には落ち着いて処置を行うことが大切です"
+            android:textSize="19sp" />
+    </RelativeLayout>
+
+</ScrollView>

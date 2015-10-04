@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- id : 13 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="fill"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="#37909d"
+            android:gravity="center"
+            android:height="70dp"
+            android:text="RICE(Rest Icing Compression Elevation)\n④RICE処置-Compression(圧迫)について"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/TextView05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView1"
+            android:text="　包帯などで患部を圧迫することで損傷部の組織液が他の部分に流れ込むことを防ぎ、内出血や腫れを食い止めます。また、出血が止まらない場合、患部上部の上流部分の動脈を圧迫し、一時的に血流量を落とすことで、出血量を減らすと共に、血液内の血小板による血管修復のペースを出血量が上回らないようにします。
+　但し、圧迫が強すぎると血流や神経を必要以上に圧迫してしまい却って症状を悪化させてしまう可能性もあります。慎重に行いましょう。
+　これらの処置は前述のIceの処置と同時に行っても構いませんし、出血量が多いときなど必要があれば、こちらの処置を先に行っても構いません"
+            android:textSize="19sp" />
+
+        <TextView
+            android:id="@+id/TextView04"
+            android:layout_width="410dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/TextView05"
+            android:layout_marginTop="17dp"
+            android:background="#FF8C00"
+            android:gravity="center"
+            android:height="40dp"
+            android:text="ポイント"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/TextView03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/TextView04"
+            android:gravity="center"
+            android:text="患部にタオルなど清潔な布を巻き、固定するためにスパナ等の工具を使って患部を圧迫しましょう。出血を抑えたい場合は患部より少し心臓に近い部分を圧迫しましょう。伸縮包帯やテーピングなどで患部を圧迫することも有効です。
+　これらの処置は患部の状態を見て、患部の先が青くなって来たりしびれがでてきたら適度に圧迫を緩め、回復したら再び圧迫を行いましょう。これらの症状がなくても定期的に圧迫を緩めることが理想です。
+　前述のIceと今回のCompressionを行っている間は、常に患部の先の色や感覚といった状態をチェックすることを心がけましょう。"
+            android:textSize="19sp" />
+    </RelativeLayout>
+
+</LinearLayout>

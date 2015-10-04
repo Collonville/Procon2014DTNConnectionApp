@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/pic"
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:layout_alignBottom="@+id/TextView05"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/abc_ab_bottom_solid_dark_holo" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextView03"
+        android:layout_below="@+id/TextView03"
+        android:background="#4197ee"
+        android:gravity="center"
+        android:height="25dp"
+        android:text="性別/年齢"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TextView01"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/TextView03"
+        android:gravity="center"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/sex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TextView02"
+        android:layout_alignLeft="@+id/name"
+        android:layout_alignRight="@+id/name"
+        android:layout_alignTop="@+id/TextView01"
+        android:gravity="center"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TextView04"
+        android:layout_alignLeft="@+id/sex"
+        android:layout_alignRight="@+id/sex"
+        android:layout_below="@+id/sex"
+        android:gravity="center"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/injury"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/TextView04"
+        android:layout_alignLeft="@+id/number"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/number"
+        android:gravity="center"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/namekana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sex"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/name"
+        android:gravity="center"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/sex"
+        android:layout_alignLeft="@+id/namekana"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/namekana"
+        android:gravity="center"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/blood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/injury"
+        android:layout_alignLeft="@+id/age"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/age"
+        android:gravity="center"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/TextView03"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/pic"
+        android:background="#4197ee"
+        android:gravity="center"
+        android:height="25dp"
+        android:text="氏名(カタカナ)"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextView01"
+        android:layout_toRightOf="@+id/pic"
+        android:background="#4197ee"
+        android:gravity="center"
+        android:height="25dp"
+        android:text="保険証番号/血液型"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/TextView04"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextView02"
+        android:layout_toRightOf="@+id/pic"
+        android:background="#4197ee"
+        android:gravity="center"
+        android:height="25dp"
+        android:text="怪我の有無"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/TextView05"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextView04"
+        android:layout_toRightOf="@+id/pic"
+        android:background="#4197ee"
+        android:gravity="center"
+        android:height="25dp"
+        android:text="登録時間"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/TextView05"
+        android:layout_alignLeft="@+id/injury"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/injury"
+        android:gravity="center"
+        android:text="TextView" />
+
+</RelativeLayout>

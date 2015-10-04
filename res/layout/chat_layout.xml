@@ -3,38 +3,49 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
-    <EditText
-        android:id="@+id/messageInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10" >
-
-    </EditText>
-
-    <Button
-        android:id="@+id/sendBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/messageInput"
-        android:layout_toLeftOf="@+id/reset"
-        android:text="メッセージ送信" />
-
-    <Button
-        android:id="@+id/reset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/sendBtn"
-        android:text="Button" />
-
     <ListView
         android:id="@+id/chatListView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/sendBtn" >
-
+        android:layout_below="@+id/TextView01" >
     </ListView>
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/sendBtn"
+        android:background="#37909d"
+        android:gravity="center"
+        android:height="50dp"
+        android:text="チャットメッセージ"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp" />
+
+    <Button
+        android:id="@+id/sendBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="メッセージ送信" />
+
+    <EditText
+        android:id="@+id/messageInput"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TextView01"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/sendBtn"
+        android:ems="10"
+        android:maxLength="97" 
+        android:hint="ここに送信したいメッセージを入力してください">
+
+        <requestFocus />
+    </EditText>
 
 </RelativeLayout>

@@ -1,13 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+<!-- id : 1 -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CPR" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#37909d"
+            android:gravity="center"
+            android:height="50dp"
+            android:text="心肺蘇生法(Cardio Pulmonary Resuscitation)"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp" />
+
+        <Button
+            android:id="@+id/about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/button_design1"
+            android:text="①救急蘇生法について"
+            android:textColor="#FFFFFF"
+            android:textSize="35sp" />
+
+        <Button
+            android:id="@+id/procedure1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/button_design1"
+            android:text="②心肺蘇生法の手順1"
+            android:textColor="#FFFFFF"
+            android:textSize="35sp" />
+
+        <Button
+            android:id="@+id/procedure2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/button_design1"
+            android:text="③心肺蘇生法の手順2"
+            android:textColor="#FFFFFF"
+            android:textSize="35sp" />
+
+        <Button
+            android:id="@+id/procedure3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/button_design1"
+            android:text="④気道異物除去について"
+            android:textColor="#FFFFFF"
+            android:textSize="35sp" />
+
+        <Button
+            android:id="@+id/procedure4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/button_design1"
+            android:text="⑤気道異物除去の手順"
+            android:textColor="#FFFFFF"
+            android:textSize="35sp" />
+    </LinearLayout>
+
+</ScrollView>

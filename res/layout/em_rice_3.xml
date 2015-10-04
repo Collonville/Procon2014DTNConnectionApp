@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- id : 12 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="fill"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="#37909d"
+            android:gravity="center"
+            android:height="70dp"
+            android:text="RICE(Rest Icing Compression Elevation)\n③RICE処置-ICE(冷却)について"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/TextView05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView1"
+            android:text="　大概のケガの場合は、内出血や患部の腫れがみられます。この内出血と炎症を軽減させるために一番有効なことは患部の冷却です。ある程度の痛みを軽減させることもできます。\n　現在、冷却を行うための用具としてコールドスプレーや、握りつぶして使うもの、ゲル状の冷却材など様々な商品があります。これらはうまく使用することで大きな効果を得ることができますが、冷却しすぎると凍傷などの状態になることが危惧されます。"
+            android:textSize="19sp" />
+
+        <TextView
+            android:id="@+id/TextView04"
+            android:layout_width="410dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/TextView05"
+            android:layout_marginTop="17dp"
+            android:background="#FF8C00"
+            android:gravity="center"
+            android:height="40dp"
+            android:text="ポイント"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/TextView03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/TextView04"
+            android:gravity="center"
+            android:text="ビニール袋に氷を入れたり、患部にアンダーラップを巻くとよいでしょう。
+　一回の冷却にはおよそ15分～25分\n冷却していると冷たくてピリピリした痛みがきて、やがて無感覚となります。そうなったら一旦患部から冷却剤をはなし、再びケガの痛みが出てきたら、冷却と繰り返しましょう。"
+            android:textSize="19sp" />
+    </RelativeLayout>
+
+</LinearLayout>
